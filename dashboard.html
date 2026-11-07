@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <br><center>
+    <div id="top-nav">
+        <a href="javascript:void(0)" onclick="toggleContent('content1')">Home</a>
+        <a href="javascript:void(0)" onclick="toggleContent('content2')">Saved Images</a>
+        <a href="javascript:void(0)" onclick="toggleContent('content3')">In File</a>
+    </div></center>
+    <br>
+    <hr style="border: 0; border-top: 2px solid #000; width: 90%;">
+    <div id="content1" class="content">
+      <div style="display: flex;justify-content: space-between;align-items: center;padding-left: 10%;padding-right: 10%;">
+        <h1>Draw here</h1>
+        <button id="save-btn" class="btn">
+          <span class="btn-text-one">Save</span>
+          <span class="btn-text-two">Now !</span>
+      </button>
+      </div>
+        <center><canvas id="drawingCanvas" width="600" height="400"></canvas></center>
+
+
+        <div class="controls" id="controls">
+            <br><legend>Set brush with colour</legend>
+            <hr style="border: 0; border-top: 2px solid #000; width: 80%;"><br>
+            <label for="colorPicker">Choose Color: </label>
+            <input type="color" id="colorPicker" value="#284b63">
+            <br>
+            <label for="brushSize">Brush Size:</label>
+            <input type="range" min="0" max="100" class="range-slider" id="range">
+            <br>
+            <textarea id="note" rows="4" class="textarea1" placeholder="Write your thoughts here..."></textarea>
+            <br>
+        </div><center><br>
+        <button id="clear-btn" class="btn" onclick="clearCanvas();">
+            <span class="btn-text-one">Clear</span>
+            <span class="btn-text-two">Canvas</span>
+        </button>
+        <button id="new-btn" class="btn" onclick="clearCanvas();">
+            <span class="btn-text-one">New</span>
+            <span class="btn-text-two">Drawing</span>
+        </button><br></center>
+    </div>
+
+    <div id="content2" class="content">
+        <h1 style="text-align: center;">Saved Drawings</h1>
+        <div id="savedImages"></div>
+    </div>
+
+
+    <div id="content3" class="content">
+      <h1 style="text-align: center;">Wanna Go back????</h1><br><br><br>
+      <center><button id="logout" onclick="window.location.href='index.html'" class="btn2">Go back</button></center>
+    </div>
+    <script src="scr.js"></script>
+</body>
+</html>
